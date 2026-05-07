@@ -93,8 +93,9 @@ Possible technologies used in the project:
 ---
 
 # Possible Future Features
--user database
--GUI
+
+- user database
+- GUI
 
 ---
 
