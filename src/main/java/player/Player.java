@@ -11,10 +11,8 @@ public abstract class Player{
         this.pieceColor = color;
         this.game = game;
     }
-
     public Color getPieceColor() {
         return pieceColor;
     }
-
     public abstract void makeMove();
 }
