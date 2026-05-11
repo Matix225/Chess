@@ -18,7 +18,7 @@ public class Human extends Player{
             System.out.println("Choose piece (type his cords): ");
             piecePosX = sc.nextInt();
             piecePosY = sc.nextInt();
-            if(validPos(piecePosX, piecePosY)){
+            if(!validPos(piecePosX, piecePosY)){
                 System.out.println("X and Y should be from 1 to 8!");
                 continue;
             }
@@ -28,23 +28,9 @@ public class Human extends Player{
                 System.out.println("This is not your pawn!");
                 continue;
             }
-
-            int newX, newY;
-            System.out.println("Choose new position(type cords): ");
-            newX = sc.nextInt();
-            newY = sc.nextInt();
-            if(validPos(piecePosX, piecePosY)){
-                System.out.println("X and Y should be from 1 to 8!");
-                continue;
-            }
-
-            if(p.canMove(newX-1, newY-1) ){
-                game.setPiece(p, newX-1, newY-1);
-                break;
-            }
         }
     }
     private boolean validPos(int x, int y){
-        return (x < 1 || x > game.getHeight()) || (y < 1 || y > game.getWidth());
+        return (x >= 1 && x <= game.getHeight()) && (y >= 1 && y <= game.getWidth());
     }
 }
