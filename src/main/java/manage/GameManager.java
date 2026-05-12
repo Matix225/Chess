@@ -26,9 +26,9 @@ public class GameManager {
     }
     public void createWhitePiece(){
         //create pawn line
-        /*for(int i = 0; i < width; i++){
-            //board[6][i] = new Pawn(6, i, Color.WHITE, '♙', this);
-        }*/
+        for(int i = 0; i < width; i++){
+            board[6][i] = new Pawn(6, i, Color.WHITE, '♙', this);
+        }
 
         //create knights
         board[7][1] = new Knight(7, 1, Color.WHITE, '♘', this);
@@ -38,9 +38,9 @@ public class GameManager {
     }
     public void createBlackPiece(){
         //create pawn line
-        /*for(int i = 0; i < width; i++){
+        for(int i = 0; i < width; i++){
             board[1][i] = new Pawn(1, i, Color.BLACK, '♟', this);
-        }*/
+        }
 
         //create knights
         board[0][1] = new Knight(0, 1, Color.BLACK, '♞', this);
@@ -89,7 +89,6 @@ public class GameManager {
         else{
             for(int i = 7; i >= 0; i--){
                 for(int j = 7; j >= 0; j--){
-                    boolean whiteSquare = (i + j) % 2 == 0;
                     if(board[i][j] == null)
                         System.out.print(" ");
                     else
